@@ -539,6 +539,8 @@ pub enum CountryCode {
     ZMB,
     /// Zimbabwe
     ZWE,
+    /// Kosovo
+    UNK,
 }
 
 /// Errors that might arise when converting raw data into CountryCode
@@ -807,6 +809,7 @@ impl CountryCode {
             YEM => ISO_FULL_YEM,
             ZMB => ISO_FULL_ZMB,
             ZWE => ISO_FULL_ZWE,
+            UNK => ISO_FULL_UNK,
         }
     }
 
@@ -1064,6 +1067,7 @@ impl CountryCode {
             YEM => ISO_NUM_YEM,
             ZMB => ISO_NUM_ZMB,
             ZWE => ISO_NUM_ZWE,
+            UNK => ISO_NUM_UNK,
         }
     }
 
@@ -1321,6 +1325,7 @@ impl CountryCode {
             YEM => ISO_A2_YEM,
             ZMB => ISO_A2_ZMB,
             ZWE => ISO_A2_ZWE,
+            UNK => ISO_A2_UNK,
         }
     }
 
@@ -1578,6 +1583,7 @@ impl CountryCode {
             YEM => ISO_A3_YEM,
             ZMB => ISO_A3_ZMB,
             ZWE => ISO_A3_ZWE,
+            UNK => ISO_A3_UNK,
         }
     }
 
@@ -1836,6 +1842,7 @@ impl CountryCode {
             ISO_A2_YEM => Ok(YEM),
             ISO_A2_ZMB => Ok(ZMB),
             ISO_A2_ZWE => Ok(ZWE),
+            ISO_A2_UNK => Ok(UNK),
             x => Err(CountryCodeParseErr::InvalidAlpha2 {
                 unknown: String::from(x),
             }),
@@ -2104,6 +2111,7 @@ impl CountryCode {
             ISO_A3_YEM => Ok(YEM),
             ISO_A3_ZMB => Ok(ZMB),
             ISO_A3_ZWE => Ok(ZWE),
+            ISO_A3_UNK => Ok(UNK),
             x => Err(CountryCodeParseErr::InvalidAlpha3 {
                 unknown: String::from(x),
             }),
@@ -2371,6 +2379,7 @@ impl CountryCode {
             ISO_NUM_YEM => Ok(YEM),
             ISO_NUM_ZMB => Ok(ZMB),
             ISO_NUM_ZWE => Ok(ZWE),
+            ISO_NUM_UNK => Ok(UNK),
             x => Err(CountryCodeParseErr::InvalidID { unknown: x }),
         }
     }
